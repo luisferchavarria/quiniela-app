@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\StadiumController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -30,4 +31,5 @@ Route::controller(RegisterController::class)->group(function(){
 Route::middleware('auth:sanctum')->group( function () {
     Route::resource('teams', TeamController::class);
     Route::resource('groups', GroupController::class);
+    Route::resource('stadiums', StadiumController::class);
 });
