@@ -1,5 +1,5 @@
 <?php
-// TEST CHANGE 6
+// TEST CHANGE 7
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
