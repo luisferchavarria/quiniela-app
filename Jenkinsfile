@@ -1,11 +1,12 @@
-node {
-  stage('SCM') {
-    checkout scm
-  }
-  stage('SonarQube Analysis') {
-    def scannerHome = tool 'SonarScanner';
-    withSonarQubeEnv() {
-      bat "${scannerHome}/bin/sonar-scanner"
+pipeline {
+    agent any
+    stages {
+        stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('SonarQubePruebas') {
+                    sh './gradlew sonarqube'
+                }
+            }
+        }
     }
-  }
 }
